@@ -64,7 +64,7 @@ async def mention_afk(mention):
             is_bot = sender.bot
         if not is_bot and mention.sender_id not in USERS:
             if AFKREASON:
-                await mention.reply("I'm AFK right now." f"\nBecause **{AFKREASON}**")
+                await mention.reply("you know I am not online then why tagging me see the reason ok!!" f"\nBecause **{AFKREASON}**")
             else:
                 await mention.reply(str(choice(AFKSTR)))
             USERS.update({mention.sender_id: 1})
@@ -73,7 +73,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(
-                            f"I'm still AFK.\
+                            f"I am still not online see the reason!!\
                                 \nReason: **{AFKREASON}**"
                         )
                     else:
@@ -106,7 +106,7 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"I'm AFK right now.\
+                        f"we will talk after sometime I am not online se the reason!!\
                     \nReason: **{AFKREASON}**"
                     )
                 else:
@@ -116,7 +116,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"I'm still AFK.\
+                            f"I am still not online ok!! I'll reply soon see the reason why I am offline\
                         \nReason: **{AFKREASON}**"
                         )
                     else:
@@ -134,9 +134,9 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit("**Going AFK!**" f"\nReason: {string}")
+        await afk_e.edit("**I'll not be replying 😁😁 bcoz **" f"\nReason: {string}")
     else:
-        await afk_e.edit("**Going AFK!**")
+        await afk_e.edit("**😁😁I'll not be replying you 😁😁**")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
     ISAFK = True
@@ -152,7 +152,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("**I'm no longer AFK.**")
+        msg = await notafk.respond("**I'm online now**")
         await sleep(2)
         await msg.delete()
         if BOTLOG:
