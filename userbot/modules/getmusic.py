@@ -62,7 +62,7 @@ async def _(event):
     if ".com" not in d_link:
         await event.edit("**Enter a valid link to download from.**")
     else:
-        await event.edit("**Downloading...**")
+        await event.edit("**wait a sec 🤩🤩**")
     chat = "@MusicsHunterbot"
     try:
         async with bot.conversation(chat) as conv:
@@ -82,7 +82,7 @@ async def _(event):
             )
             await event.delete()
     except TimeoutError:
-        return await event.edit("**Error: @MusicsHunterbot is not responding.")
+        return await event.edit("**Error😔: @MusicsHunterbot is not responding.")
 
 
 @register(outgoing=True, pattern=r"^\.songf (?:(now)|(.*) - (.*))")
@@ -93,7 +93,7 @@ async def _(event):
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
         if playing is None:
             return await event.edit(
-                "**Error: LastFM says you aren't playing anything.**"
+                "**Error😔: LastFM says you aren't playing anything.**"
             )
         artist = playing.get_artist()
         song = playing.get_title()
@@ -102,11 +102,11 @@ async def _(event):
         song = event.pattern_match.group(3)
     track = str(artist) + " - " + str(song)
     chat = "@SpotifyMusicDownloaderBot"
-    await event.edit("**Searching...**")
+    await event.edit("**dekh rhe h **")
     try:
         async with bot.conversation(chat) as conv:
             await asyncio.sleep(2)
-            await event.edit("**Downloading...**")
+            await event.edit("**Ruko download ho rha h**")
             try:
                 response = conv.wait_event(
                     events.NewMessage(incoming=True, from_users=752979930)
@@ -121,7 +121,7 @@ async def _(event):
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 return await event.reply(
-                    "**Unblock @SpotifyMusicDownloaderBot and retry......**"
+                    "**Unblock kr isko 👉👉@SpotifyMusicDownloaderBot👈👈and retry......**"
                 )
             await bot.forward_messages(event.chat_id, respond.message)
         await event.client.delete_messages(conv.chat_id, [msg.id, r.id, respond.id])
