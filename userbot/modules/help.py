@@ -23,9 +23,9 @@ async def help(event):
         else:
             await event.edit("Please specify a valid module name.")
     else:
-        final = "**List of all loaded module(s)**\n\
-                 \nSpecify which module do you want help for! \
-                 \n**Usage:** `.help` <module name>\n\n"
+        final = "**here are all the plugins installed (s)**\n\
+                 \nna tujhse na ho payega \
+                 \n**use aise Krna h** `.help` <module name>\n\n"
 
         temp = "".join(str(i) + " " for i in CMD_HELP)
         temp = sorted(temp.split())
