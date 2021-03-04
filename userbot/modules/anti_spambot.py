@@ -23,7 +23,7 @@ from userbot import (
 
 @bot.on(ChatAction)
 async def ANTI_SPAMBOTS(welcm):
-    """Ban a recently joined user if it matches the spammer checking algorithm."""
+    """Ban a user if it matches the spammer checking algorithm."""
     try:
         if not ANTI_SPAMBOT:
             return
@@ -146,8 +146,8 @@ async def ANTI_SPAMBOTS(welcm):
                     if ANTI_SPAMBOT_SHOUT:
                         await welcm.reply(
                             "@admins\n"
-                            "**Anti spambot detector!\n"
-                            "This user matches my algorithms as a spambot!**"
+                            "**Re ban kro isne koi\n"
+                            "This user matches my algorithms as spambot!**"
                             f"Reason: {reason}"
                         )
                         kicked = False
@@ -172,8 +172,8 @@ async def ANTI_SPAMBOTS(welcm):
                         if ANTI_SPAMBOT_SHOUT:
                             await welcm.reply(
                                 "@admins\n"
-                                "**Anti spambot detector!\n"
-                                "This user matches my algorithms as a spambot!**"
+                                "**Re report kro isne koi\n"
+                                "This user matches my algorithms as  spambot!**"
                                 f"Reason: {reason}"
                             )
                             kicked = False
