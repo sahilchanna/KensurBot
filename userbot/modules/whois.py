@@ -22,7 +22,7 @@ from userbot.events import register
 async def who(event):
 
     await event.edit(
-        "**Sit tight while I steal some data from the Global Network Zone...**"
+        "**Sit tight while I steal some data from the Network about this user...**"
     )
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -31,7 +31,7 @@ async def who(event):
     replied_user = await get_user(event)
     if replied_user is None:
         return await event.edit(
-            "**Well that's an anonymous admin, good luck figuring out which one!**"
+            "**Well that's an non-anonymous admin, good luck figuring out which one!**"
         )
 
     try:
@@ -138,15 +138,15 @@ async def fetch_info(replied_user, event):
         last_name.replace("\u2060", "") if last_name else ("This User has no Last Name")
     )
     username = f"@{username}" if username else ("This User has no Username")
-    user_bio = "This User has no About" if not user_bio else user_bio
+    user_bio = "This User has no bio" if not user_bio else user_bio
 
-    caption = "<b>USER INFO:</b>\n\n"
+    caption = "<b>info \'bout the userr</b>\n\n"
     caption += f"First Name: {first_name}\n"
     caption += f"Last Name: {last_name}\n"
     caption += f"Username: {username}\n"
-    caption += f"Data Centre ID: {dc_id}\n"
-    caption += f"Number of Profile Pics: {replied_user_profile_photos_count}\n"
-    caption += f"Is Bot: {is_bot}\n"
+    caption += f"DC ID: {dc_id}\n"
+    caption += f"No. of PPic: {replied_user_profile_photos_count}\n"
+    caption += f"Is a Bot: {is_bot}\n"
     caption += f"Is Restricted: {restricted}\n"
     caption += f"Is Verified by Telegram: {verified}\n"
     caption += f"ID: <code>{user_id}</code>\n\n"
