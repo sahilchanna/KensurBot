@@ -35,7 +35,7 @@ async def fastpurger(purg):
     if msgs:
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
-        purg.chat_id, "**Fast purge complete!**" f"\nPurged {str(count)} messages"
+        purg.chat_id, "**boht jdli krdiye delete!**" f"\nitne krdiye {str(count)} messages delete"
     )
     """
     if BOTLOG:
@@ -62,13 +62,13 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "**Purge complete!** Purged " + str(count) + " messages.",
+         "Itne messages " + str(count) + " hogye delete",
     )
     """
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "Purge of " + str(count) + " messages done successfully.")
+            str(count) + " krdiya re bhaiya delete messages")
     """
     await sleep(2)
     i = 1
