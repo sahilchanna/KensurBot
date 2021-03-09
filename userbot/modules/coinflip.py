@@ -1,6 +1,6 @@
 import random
 coin = ['Head','Tail']
-@ultroid_cmd(pattern="coinflip")
+@kensurbot_cmd(pattern="coinflip")
 async def coinflip(ult):
   await ult.edit("Tossing coin...")
   c = random.choice(coin)
